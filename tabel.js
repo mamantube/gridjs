@@ -20,3 +20,5 @@ function tabel () {
 }
 
 tabel();
+
+export { tabel };
