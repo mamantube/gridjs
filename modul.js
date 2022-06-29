@@ -1,2 +1,2 @@
-// import { tabel } from "./tabel";
-// tabel ();
+import { table } from "./tabel";
+table ();

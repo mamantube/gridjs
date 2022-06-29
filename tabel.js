@@ -51,7 +51,9 @@ class Table {
       ["willy", "30 Tahun", "Depok"]
     ]
   });
+  
   const app = document.getElementById("tabel");
   table.render(app);
-  
-// export { tabel };
+
+
+export { table };
