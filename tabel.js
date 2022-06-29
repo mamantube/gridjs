@@ -1,24 +1,57 @@
-function tabel () {
-    new gridjs.Grid ({
-        search : true,
-        sort : true,
-        pagination : {
-            limit : 3
-        },
-        columns : ["NAMA", "UMUR", "Alamat"],
-        data : [
-            ["Anton", "27 Tahun", "Kapuk"],
-            ["Deren", "23 Tahun", "Bintaro"],
-            ["Devin", "25 Tahun", "Pondok Indah"],
-            ["Norman", "30 Tahun", "Andara"],
-            ["Rose", "24 Tahun", "Green Lake"],
-            ["Stella", "23 Tahun", "BSD"]
-        ]
+class Table {
+    constructor(init) {
+      this.init = init;
     }
-
-    ).render(document.getElementById("tabel"));
-}
-
-tabel();
-
-export { tabel };
+  
+    createHeader(data) {
+      let open = "<thead><tr>";
+      let close = "</tr></thead>";
+      data.forEach((d) => {
+        open += `<th>${d}</th>`;
+      });
+  
+      return open + close;
+    }
+  
+    createBody(data) {
+      let open = "<tbody>";
+      let close = "</tbody>";
+  
+      data.forEach((d) => {
+        open += `
+          <tr>
+            <td>${d[0]}</td>
+            <td>${d[1]}</td>
+            <td>${d[2]}</td>
+          </tr>
+        `;
+      });
+  
+      return open + close;
+    }
+  
+    render(element) {
+      let table =
+        "<table class='table table-hover  table-primary'>" +
+        this.createHeader(this.init.columns) +
+        this.createBody(this.init.data) +
+        "</table>";
+      element.innerHTML = table;
+    }
+  }
+  
+  const table = new Table({
+    columns: ["NAMA", "UMUR", "DOMISILI"],
+    data: [
+      ["Aldo", "25 Tahun", "Bekasi"],
+      ["Budi", "27 Tahun", "Cikarang"],
+      ["Herman", "23 Tahun", "Jakarta"],
+      ["Junaidi", "26 Tahun", "Tangerang"],
+      ["Stella", "25 Tahun", "Jakarta"],
+      ["willy", "30 Tahun", "Depok"]
+    ]
+  });
+  const app = document.getElementById("tabel");
+  table.render(app);
+  
+// export { tabel };
