@@ -53,6 +53,6 @@ class Table {
   });
 
   const app = document.getElementById("tabel");
-  table.render(table);
+  table.render(tabel);
 
-// export {table};
+// export {table}
