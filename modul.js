@@ -1,2 +1,2 @@
-import { table } from "./tabel";
-table ();
+// import { table } from "./tabel";
+// table ();
