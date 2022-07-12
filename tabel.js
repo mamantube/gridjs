@@ -48,11 +48,12 @@ class Table {
       ["Herman", "23 Tahun", "Jakarta"],
       ["Junaidi", "26 Tahun", "Tangerang"],
       ["Stella", "25 Tahun", "Jakarta"],
-      ["willy", "30 Tahun", "Depok"]
+      ["willy", "30 Tahun", "Depok"],
+      ["Maman", "25 Tahun", "Jakarta"]
     ]
   });
 
   const app = document.getElementById("tabel");
   table.render(tabel);
 
-// export {table}
+export { table };
